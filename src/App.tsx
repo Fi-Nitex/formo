@@ -1,8 +1,20 @@
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+} from "@clerk/clerk-react";
+import Dashboard from "./components/Dashboard";
+
 function App() {
   return (
-    <>
-      <h2 className="text-5xl underline text-red-400">Hello World</h2>
-    </>
+    <header>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <Dashboard />
+      </SignedIn>
+    </header>
   );
 }
 
